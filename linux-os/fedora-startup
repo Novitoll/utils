@@ -1,0 +1,14 @@
+sudo su
+
+dnf update -y
+
+rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg
+dnf config-manager --add-repo https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo
+
+dnf install -y terminator mc xclip sublime-text zsh vim
+
+sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="amuse"/'  ~/.zshrc
+
+# https://github.com/paradoxxxzero/gnome-shell-system-monitor-applet
+
